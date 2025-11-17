@@ -2,10 +2,10 @@ import sys
 
 import pygame
 
-from settings import Settings
-from grid import Grid
 from button import Button
+from grid import Grid
 from message import Message
+from settings import Settings
 
 
 class Game:
@@ -17,7 +17,8 @@ class Game:
         self.settings = Settings()
 
         self.screen = pygame.display.set_mode(
-            (self.settings.screen_width, self.settings.screen_height))
+            (self.settings.screen_width, self.settings.screen_height)
+        )
         pygame.display.set_caption("Tic Tac Toe")
 
         self.grid = Grid(self)
@@ -54,12 +55,26 @@ class Game:
         winner = self.grid.check_winner()
         if winner:
             self.winner = winner
-            self.game_result_msg = Message(self, f"Player {self.winner} wins!", center=(
-                self.settings.screen_width / 2, self.settings.screen_height / 2 - 60))
+            self.game_result_msg = Message(
+                self,
+                f"Player {self.winner} wins!",
+                center=(
+                    self.settings.screen_width / 2,
+                    self.settings.screen_height / 2 - 60,
+                ),
+            )
             self.game_active = False
-        elif self.grid.is_full() and not winner:  # Check if all cells are filled and no winner
-            self.game_result_msg = Message(self, "It's a tie!", center=(
-                self.settings.screen_width / 2, self.settings.screen_height / 2 - 60))
+        elif (
+            self.grid.is_full() and not winner
+        ):  # Check if all cells are filled and no winner
+            self.game_result_msg = Message(
+                self,
+                "It's a tie!",
+                center=(
+                    self.settings.screen_width / 2,
+                    self.settings.screen_height / 2 - 60,
+                ),
+            )
             self.game_active = False
 
     def _update_screen(self):
@@ -83,6 +98,6 @@ class Game:
             self.clock.tick(60)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     game = Game()
     game.run_game()
