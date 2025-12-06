@@ -9,8 +9,9 @@ class Button:
         width=200,
         height=50,
         bg_color=(200, 200, 200),
-        text_color=(255, 255, 255),
-        font_size=48,
+        text_color=(0, 0, 0),
+        font_size=32,
+        center=None,
     ):
         """Initialize button attributes."""
         self.screen = game.screen
@@ -24,7 +25,10 @@ class Button:
 
         # Build the button's rect object and center it.
         self.rect = pygame.Rect(0, 0, self.width, self.height)
-        self.rect.center = self.screen_rect.center
+        if center:
+            self.rect.center = center
+        else:
+            self.rect.center = self.screen_rect.center
 
         # The button message needs to be prepped only once.
         self._prep_msg(msg)
