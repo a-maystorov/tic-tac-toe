@@ -2,13 +2,9 @@
 
 A classic Tic-Tac-Toe game built with Python and Pygame, featuring both Player vs Player and Player vs AI game modes. The AI opponent uses strategic decision-making to provide a challenging experience.
 
-## Screenshots/Demo
+## Demo
 
-![Game Start Screen](images/menu_screenshot.png)
-![Gameplay](images/gameplay_screenshot.png)
-![AI Mode](images/ai_mode_screenshot.png)
-
-_Note: Add actual screenshots or a GIF showing gameplay_
+![Game Demo](./assets/ttt-demo.gif)
 
 ## Features
 
