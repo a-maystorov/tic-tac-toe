@@ -114,16 +114,6 @@ tic-tac-toe/
 3. First player to get 3 of their symbols in a row (horizontally, vertically, or diagonally) wins
 4. If all cells are filled with no winner, the game is a tie
 
-## Future Improvements
-
-- [ ] Add difficulty levels for AI (Easy, Medium, Hard)
-- [ ] Implement full minimax algorithm with alpha-beta pruning for unbeatable AI
-- [ ] Add sound effects and animations
-- [ ] Track win/loss statistics across multiple games
-- [ ] Add online multiplayer mode
-- [ ] Implement different board sizes (4x4, 5x5)
-- [ ] Add themes and customizable graphics
-
 ## Code Highlights
 
 ### AI Win Detection Logic
