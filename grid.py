@@ -51,11 +51,10 @@ class Grid:
         # Draw X and O images
         for row in range(3):
             for col in range(3):
-                if self.cells[row][col]:
+                cell_value = self.cells[row][col]
+                if cell_value in ("X", "O"):
                     center_x, center_y = self._get_center_coords(row, col)
-                    self.players[self.cells[row][col]].draw(
-                        self.screen, (center_x, center_y)
-                    )
+                    self.players[cell_value].draw(self.screen, (center_x, center_y))
 
     def update(self, mouse_pos):
         """Handle updates to the grid based on mouse clicks."""

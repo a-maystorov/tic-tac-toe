@@ -84,7 +84,8 @@ class Game:
         if self.game_active:
             self.grid.draw()
         else:
-            self.game_result_msg.draw()
+            if self.game_result_msg:
+                self.game_result_msg.draw()
             self.play_again_button.draw()
 
         pygame.display.flip()
