@@ -96,8 +96,16 @@ class Game:
         else:
             self.grid.update(mouse_pos)
 
-            # If playing against AI and it's O's turn, let AI play
-            if self.game_mode == "PVAI" and self.grid.current_turn == "O" and self.ai:
+            # Check for winner after player's move (BEFORE AI moves)
+            self._check_winner()
+
+            # If playing against AI, it's O's turn, and game is still active, let AI play
+            if (
+                self.game_mode == "PVAI"
+                and self.grid.current_turn == "O"
+                and self.game_active
+                and self.ai
+            ):
                 self.ai.make_move()
 
     def _check_events(self):
@@ -174,7 +182,7 @@ class Game:
         """Start the main loop for the game."""
         while True:
             self._check_events()
-            self._check_winner()
+            self._check_winner()  # Check again in main loop in case AI just moved
             self._update_screen()
             self.clock.tick(60)
 
